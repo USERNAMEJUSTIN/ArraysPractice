@@ -73,33 +73,30 @@ void main() {
 
     // ЗАДАЧА 5
 
-    int cycle = 0;
-    while (cycle == 0) {
-        Scanner sc = new Scanner(System.in);
-        int[] array = new int[5];
-        int pass = 0, fail = 0;
-        for (int change = 0; change < array.length; change++) {
-            System.out.print("Enter number (between 0 and 100): ");
-            int value = sc.nextInt();
-            if (value < 0 || value > 100) {
-                System.out.println("Failed!");
-                break;
-            } else {
-                array[change] = value;
-                if (value >= 60) {
-                    pass++;
-                } else if (value < 60) {
-                    fail++;
-                }
+    Scanner sc = new Scanner(System.in);
+    int[] array = new int[5];
+    int pass = 0, fail = 0;
+    for (int change = 0; change < array.length; change++) {
+        System.out.print("Enter number (between 0 and 100): ");
+        int value = sc.nextInt();
+        if (value < 0 || value > 100) {
+            System.out.println("invalid number");
+            break;
+        } else {
+            array[change] = value;
+            if (value >= 60) {
+                pass++;
+            } else if (value < 60) {
+                fail++;
             }
         }
-            float average = (array[0] + array[1] + array[2] + array[3] + array[4]) / array.length;
-            System.out.print("Scores: ");
-            for (int i : array) {
-                System.out.print(i + " ");
-            }
-            System.out.println("\nPassed: " + pass);
-            System.out.println("Failed: " + fail);
-            System.out.println("Average: " + average);
+    }
+        float average = (array[0] + array[1] + array[2] + array[3] + array[4]) / array.length;
+        System.out.print("Scores: ");
+        for (int i : array) {
+            System.out.print(i + " ");
         }
+        System.out.println("\nPassed: " + pass);
+        System.out.println("Failed: " + fail);
+        System.out.println("Average: " + average);
     }

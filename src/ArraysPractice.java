@@ -81,7 +81,8 @@ void main() {
         int value = sc.nextInt();
         if (value < 0 || value > 100) {
             System.out.println("invalid number");
-            break;
+            change--;
+            continue;
         } else {
             array[change] = value;
             if (value >= 60) {
